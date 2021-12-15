@@ -71,9 +71,9 @@ class morse_potential:
             D_n = params[neighbors][:, 1]
             sig_n = params[neighbors][:, 2]
             if self.combo == "mean":
-                D = np.sqrt(D_1 * D_n)
-                sig = (sig_1 + sig_n) / 2
-                re = (re_1 + re_n) / 2
+                D = 9.975126    
+                re = 1.682829
+                sig = re - np.log(2)/1.51511
             elif self.combo == "yang":
                 D = (2 * D_1 * D_n) / (D_1 + D_n)
                 sig = (sig_1 * sig_n) * (sig_1 + sig_n) / (sig_1 ** 2 + sig_n ** 2)
